@@ -15,15 +15,14 @@ $(() => {
   const redraw = () => {
     c.clearRect(0,0,canvas[0].width,canvas[0].height);
     c.lineCap = "round";
-    for (let i=0; i<strokes.length; i++) {
+    for (let i = 0; i < strokes.length; i++) {
       let s = strokes[i];
       c.strokeStyle = s.color;
       c.lineWidth = s.size;
       c.beginPath();
       c.moveTo(s.points[0].x, s.points[0].y);
-      for (let j=0; j<s.points.length; j++) {
-        let p = s.points[j];
-        c.lineTo(p.x,p.y);
+      for (let j = 0; j < s.points.length; j++) {
+        c.lineTo(s.points[j].x, s.points[j].y);
       }
       c.stroke();
     }
