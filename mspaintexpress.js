@@ -89,6 +89,15 @@ $(() => {
 
     $("#brushsize").on("input", function(){
       brush.size = this.value;
+      $("#brushsizenumber").text(brush.size);
+    });
+
+    $(window).resize(function(){
+      canvas.attr({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+      redraw();
     });
   }
 
